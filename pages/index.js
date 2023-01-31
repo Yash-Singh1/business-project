@@ -22,14 +22,18 @@ const defaultOptions = {
 };
 
 export default function Home() {
-  const [a, setA] = useState("dark");
+  const [a, setA] = useState("light");
 
-  const theme = createTheme({ type: a });
+  const theme = createTheme({ type: a, theme: {
+    colors: {
+      text: "$green200"
+    }
+  } });
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>MailThing</title>
+        <title>GreenCrumbs</title>
         <meta name="description" content="Analyze your mail!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -61,22 +65,21 @@ export default function Home() {
             h1
             css={{ textGradient: "45deg, $blue600 -20%, $green600 50%" }}
           >
-            Save Your Future!
+            GreenCrumbs
           </Text>
-          <Text h3>
-            The ultimate chrome extension built to save you via preventing scam
-            emails and other fraudulent emails. Via our application, you, your
-            company and the rest of the world can be virus-free and gain valuable insights on your emails.
+          <Text h3 color="$green600">
+            Enjoy our custom-designed healthy, plant-based snack based on chick-pea puffs.
           </Text>
+          <Image width={200} height={150} src={"https://i.ibb.co/XjJk9Lj/Screenshot-2023-01-31-9-37-16-AM.png"} />
           <Button
             color="secondary"
             shadow
             size={"lg"}
             ghost
-            onPress={() => window.open('https://mail.google.com/mail/u/0/#inbox')}
+            onPress={() => window.open('https://docs.google.com/document/d/1_usPsvq0ulIaYwoKU5tH3G_ClWMp_f-CiWBZVuIE_ck/edit')}
             css={{ marginTop: "1rem" }}
           >
-            Add Us to Save Your Future!
+            Show me my Healthy Future!
           </Button>
           <Lottie options={defaultOptions} height={400} width={400} />
         </Container>
