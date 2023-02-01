@@ -22,7 +22,7 @@ const defaultOptions = {
 };
 
 export default function Home() {
-  const [a, setA] = useState("light");
+  const [a, setA] = useState("dark");
 
   const theme = createTheme({ type: a, theme: {
     colors: {
@@ -33,12 +33,13 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>GreenCrumbs</title>
+        <title>GreenCrumb</title>
         <meta name="description" content="Analyze your mail!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NextUIProvider disableBaseline={false} theme={theme}>
         <Navbar disableShadow={true} css={{ marginTop: "2rem" }}>
+          {a === 'light' ? <Image width={50} height={50} src='/logo2.png' /> : <Image width={50} height={50} src='/logo2white.png' />}
           {a === "light" ? (
             <svg
               style={{ width: "2rem", marginLeft: "auto", cursor: "pointer" }}
@@ -63,21 +64,21 @@ export default function Home() {
         <Container css={{ justifyContent: "center" }}>
           <Text
             h1
-            css={{ textGradient: "45deg, $blue600 -20%, $green600 50%" }}
+            css={{ textGradient: "45deg, $blue600 -20%, $green600 50%", letterSpacing: "$tight", userSelect: "none" }}
           >
-            GreenCrumbs
+            GreenCrumb
           </Text>
-          <Text h3 color="$green600">
+          <Text h3 color="$green600" css={{ letterSpacing: "$normal", userSelect: "none" }}>
             Enjoy our custom-designed healthy, plant-based snack based on chick-pea puffs.
           </Text>
-          <Image width={200} height={150} src={"https://i.ibb.co/XjJk9Lj/Screenshot-2023-01-31-9-37-16-AM.png"} />
+          <Image style={{ userSelect: "none" }} width={200} height={150} src={"/food.png"} />
           <Button
             color="secondary"
             shadow
             size={"lg"}
             ghost
             onPress={() => window.open('https://docs.google.com/document/d/1_usPsvq0ulIaYwoKU5tH3G_ClWMp_f-CiWBZVuIE_ck/edit')}
-            css={{ marginTop: "1rem" }}
+            css={{ marginTop: "1rem", transition: ".2s", "&:hover": { translate: "0 -5px", transition: ".3s" }, userSelect: "none" }}
           >
             Show me my Healthy Future!
           </Button>
