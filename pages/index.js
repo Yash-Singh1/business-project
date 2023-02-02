@@ -41,22 +41,39 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NextUIProvider disableBaseline={false} theme={theme}>
-        <Navbar disableShadow={true} css={{ marginTop: "2rem" }}>
+        <Navbar disableShadow={true} css={{ marginTop: "2rem", marginBottom: "2rem" }}>
           {a === "light" ? (
             <Image
-              width={50}
+              width={75}
               height={50}
               src="/logo2.png"
               style={{ userSelect: "none" }}
             />
           ) : (
             <Image
-              width={50}
+              width={75}
               height={50}
-              src="/logo2white.png"
+              src="/logo2white (1).png"
               style={{ userSelect: "none" }}
             />
           )}
+          <Text
+            h2
+            css={{
+              textGradient: "45deg, $blue600 -20%, $green600 50%",
+              letterSpacing: "$tight",
+              userSelect: "none",
+              display: "grid",
+              justifyContent: "center",
+              alignItems: "center",
+              placeItems: "center",
+              height: "100%",
+              paddingTop: "10px",
+              verticalAlign: "middle"
+            }}
+          >
+            GreenCrumb
+          </Text>
           {a === "light" ? (
             <svg
               style={{
@@ -89,16 +106,6 @@ export default function Home() {
           )}
         </Navbar>
         <Container css={{ justifyContent: "center" }}>
-          <Text
-            h1
-            css={{
-              textGradient: "45deg, $blue600 -20%, $green600 50%",
-              letterSpacing: "$tight",
-              userSelect: "none",
-            }}
-          >
-            GreenCrumb
-          </Text>
           <Text
             h3
             color="$green600"
